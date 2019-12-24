@@ -21,7 +21,7 @@
         <javax.ws.rs.version>2.1.1</javax.ws.rs.version>
         <httpclient.version>4.5.10</httpclient.version>
         <javax.validation.version>1.0.0.GA</javax.validation.version>
-        <jackson.version>2.3.3</jackson.version>
+        <jackson.version>2.10.1</jackson.version>
         <lombok.version>1.18.6</lombok.version>
     </properties>
 
