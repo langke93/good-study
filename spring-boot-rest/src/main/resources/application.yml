@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring-boot-rest
+  datasource:
+    url: @filter.ds.jdbcUrl@
+    username: @filter.ds.user@
+    password: @filter.ds.password@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+      host: @filter.redis.host@
+      port: @filter.redis.port@
+      password: @filter.redis.password@
+app:
+  config:
+    proxyList:
+logging:
+  file: /opt/logs/app/spring-boot-rest.log
+
+
+
+
