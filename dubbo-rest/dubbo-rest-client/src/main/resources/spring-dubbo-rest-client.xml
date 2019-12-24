@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi ="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo = "http://dubbo.apache.org/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://dubbo.apache.org/schema/dubbo  http://dubbo.apache.org/schema/dubbo/dubbo.xsd" >
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="Dubbo-REST-Client">
+        <!-- 本机测试，22222被服务端占用，客户端端口要修改，否则启动时报错 -->
+        <dubbo:parameter key="qos.port" value="22223"/>
+    </dubbo:application>
+    <!-- 配置 Dubbo Annotation 包范围-->
+    <dubbo:annotation package="org.langke.dubbo.rest.client"/>
+    <!-- 使用multicast广播注册中心暴露服务地址
+    为了减少广播量，Dubbo 缺省使用单播发送提供者地址信息给消费者，如果一个机器上同时启了多个消费者进程，消费者需声明 unicast=false，否则只会有一个消费者能收到消息;当服务者和消费者运行在同一台机器上，消费者同样需要声明unicast=false，否则消费者无法收到消息，导致No provider available for the service异常：
+    -->
+    <dubbo:registry address="multicast://224.5.6.7:1234?unicast=false" />
+    <!-- 用rest协议在18080端口暴露服务 , 使用外部的tomcat作为服务容器-->
+    <dubbo:protocol name="rest" port="8081" server="tomcat"/>
+</beans>
