@@ -7,20 +7,22 @@ import org.langke.dubbo.rest.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Service
 public class UserServiceClientImpl implements UserServiceClient {
     Logger logger = LoggerFactory.getLogger(UserServiceClientImpl.class);
-    @Reference(url = "dubbo://10.0.75.1:20880/org.langke.dubbo.rest.service.UserService")
+    @Reference()
     private UserService userService;
     @Override
-    public Boolean registerUser(User user) {
-        logger.info("client registerUser:{}",user.getUserName());
+    public Boolean registerUser(User user, HttpServletRequest request) {
+        logger.info("client {} registerUser:{}",request.getRemoteAddr(),user.getUserName());
         return userService.registerUser(user);
     }
 
     @Override
-    public User getUser(Long id) {
-        logger.info("client getUser:{}",id);
+    public User getUser(Long id, HttpServletRequest request) {
+        logger.info("client {} getUser:{}",request.getRemoteAddr(),id);
         return userService.getUser(id);
     }
 }

@@ -5,5 +5,5 @@
 基于rest dubbo服务调用示例：  
 ```
 curl http://localhost:8081/users/7  
-curl http://localhost:8081/users/register -XPOST  -H "Content-Type:application/json" -d '{"userName":"user1"}'  
+curl http://localhost:8081/users/register -XPOST  -H "Content-Type:application/json" -d'{"userName":"user1"}'  
 ```

@@ -23,9 +23,15 @@
         <javax.validation.version>1.0.0.GA</javax.validation.version>
         <jackson.version>2.3.3</jackson.version>
         <lombok.version>1.18.6</lombok.version>
+        <nacos-config.version>2.2.1.RELEASE</nacos-config.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>${nacos-config.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.jboss.resteasy</groupId>
             <artifactId>resteasy-jaxrs</artifactId>
