@@ -21,7 +21,7 @@
         <javax.ws.rs.version>2.1.1</javax.ws.rs.version>
         <httpclient.version>4.5.10</httpclient.version>
         <javax.validation.version>1.0.0.GA</javax.validation.version>
-        <jackson.version>2.9.10.4</jackson.version>
+        <jackson.version>2.11.0</jackson.version>
         <lombok.version>1.18.6</lombok.version>
         <nacos-config.version>2.2.1.RELEASE</nacos-config.version>
     </properties>
