@@ -27,7 +27,7 @@
             <log4j.version>1.2.17</log4j.version>
             <scala.binary.version>2.12</scala.binary.version>
             <scala.version>2.12.7</scala.version>
-            <mysql.version>5.1.47</mysql.version>
+            <mysql.version>8.0.28</mysql.version>
     </properties>
     <dependencies>
        <!-- Apache Flink dependencies -->
