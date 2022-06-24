@@ -11,7 +11,7 @@
 
 
     <properties>
-        <jboss.resteasy.version>3.9.3.Final</jboss.resteasy.version>
+        <jboss.resteasy.version>3.14.0.Final</jboss.resteasy.version>
         <tomcat.version>8.5.51</tomcat.version>
         <dubbo.version>2.7.4.1</dubbo.version>
         <spring.version>5.2.5.RELEASE</spring.version>
